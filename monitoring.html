@@ -1,0 +1,425 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+<title>Aidroponics | Monitoring</title>
+<!-- Bootstrap Core CSS -->
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- animation CSS -->
+<link href="css/animate.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+<!-- color CSS -->
+<link href="css/colors/default.css" id="theme"  rel="stylesheet">
+<!-- page CSS -->
+<link href="plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
+<link href="plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
+<link href="plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+<link href="plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+<link href="plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+<link href="plugins/bower_components/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader">
+  <div class="cssload-speeding-wheel"></div>
+</div>
+<div id="wrapper">
+  <!-- Top Navigation -->
+  <nav class="navbar navbar-default navbar-static-top m-b-0">
+    <div class="navbar-header">
+
+      <!-- .Logo -->
+      <div class="top-left-part"><a class="logo" href="index.html"><!--This is logo icon--><img src="plugins/images/eliteadmin-small-logo.png" alt="home" class="light-logo" /></a></div>
+      <ul class="nav navbar-top-links navbar-left hidden-xs">
+        <li><a href="javascript:void(0)" class="logotext"><!--This is logo text--><img src="plugins/images/eliteadmin-small-text.png" alt="home" class="light-logo" alt="home" /></a></li>
+      </ul>
+      <!-- /.Logo -->
+
+      <!-- top right panel -->
+      <ul class="nav navbar-top-links navbar-right pull-right">
+        <!-- .dropdown -->
+        <li class="dropdown"> <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Pak Raden</b> </a>
+          <ul class="dropdown-menu dropdown-user animated flipInY">
+            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="index.html"><i class="fa fa-power-off"></i> Logout</a></li>
+          </ul>
+          <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+
+        <!-- .right toggle -->
+        <li class="right-side-toggle"><a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-arrow-right"></i></a></li>
+        <!-- /.right toggle -->
+      </ul>
+      <!-- top right panel -->
+
+    </div>
+  </nav>
+  <!-- End Top Navigation -->
+  
+  <!-- .Side panel -->
+  <div class="side-mini-panel">
+       <ul class="mini-nav">
+
+              <div class="togglediv"><a href="javascript:void(0)" id="togglebtn"><i class="ti-menu"></i></a></div>
+              <!-- .Ui Elemtns -->
+              <li class="selected"><a href="javascript:void(0)"><i data-icon="/" class="linea-icon linea-basic"></i></a>
+                    <div class="sidebarmenu">
+                        <!-- Left navbar-header -->
+                          <h3 class="menu-title">Main Menu</h3>
+                          <ul class="sidebar-menu">
+                              <li class="active"><a href="#">Monitoring</a></li>
+                              <li><a href="control.html">Control</a></li>
+                              <li><a href="parameter.html">Parameter</a></li>
+                          </ul>
+                          <!-- Left navbar-header end -->
+                    </div> 
+              </li>
+              <!-- /.Ui Elemtns -->
+
+              <!-- .Tables -->
+              <li class=""><a href="javascript:void(0)"><i data-icon="O" class="linea-icon linea-software fa-fw"></i></a>
+                  <div class="sidebarmenu">
+                      <!-- Left navbar-header -->
+                        <h3 class="menu-title">Tables</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#">Water pH</a></li>
+                            <li><a href="#">TDS (Water Nutrition)</a></li>
+                            <li><a href="#">Water Temperature</a></li>
+                            <li><a href="#">Air Temperature</a></li>
+                            <li><a href="#">Air Humidity</a></li>
+                            <li><a href="#">Water Turbidity</a></li>
+                            <li><a href="#">Light</a></li>
+                        </ul>
+                        <!-- Left navbar-header end -->
+                  </div>
+              </li>
+              <!-- /.Tables -->
+
+              <!-- .Widgets -->
+              <li class=""><a href="javascript:void(0)"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i></a>
+                  <div class="sidebarmenu">
+                      <!-- Left navbar-header -->
+                        <h3 class="menu-title">Setting</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="index.html">Log Out</a></li>
+                        </ul>
+                        <!-- Left navbar-header end -->
+                  </div>
+              </li>
+              <!-- /.Widgets -->
+           </ul>
+  </div>
+  <!-- /.Side panel -->
+
+  <!-- Page Content -->
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <!-- .row -->
+      <div class="row bg-title" style="background:url(plugins/images/heading-title-bg.jpg) no-repeat center center /cover;">
+        <div class="col-lg-12">
+          <h4 class="page-title">Monitoring</h4>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-12">
+          <ol class="breadcrumb pull-left">
+            <li><a href="#">Dashboard</a></li>
+            <li class="active">Monitoring</li>
+          </ol>
+        </div>
+        <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+
+      <!--row -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="white-box">
+            <div class="row">
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Water pH</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartph" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">TDS (Water Nutrition)</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="charttds" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Water Temperature</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartwatertemperature" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Air Temperature</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartairtemperature" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Air Humidity</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartairhumidity" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Water Turbidity</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartwaterturbidity" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="white-box">
+                  <h3 class="box-title">Light</h3>
+                  <div class="demo-container" style="height:200px;">
+                    <div id="chartlight" class="demo-placeholder"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--row -->
+      
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> 2016 &copy; Elite Admin brought to you by themedesigner.in </footer>
+  </div>
+  <!-- /#page-wrapper -->
+  <!-- .right panel -->
+  <div class="right-side-panel">
+      <div class="scrollable-right">
+          <!-- .Theme settings -->
+          <h3 class="title-heading">Colors</h3>
+          <ul id="themecolors" class="p-20">
+              <li><b>Choose your theme color</b></li>
+              <li><a href="javascript:void(0)" theme="default" class="default-theme working">1</a></li>
+              <li><a href="javascript:void(0)" theme="gray" class="yellow-theme">3</a></li>
+              <li><a href="javascript:void(0)" theme="blue" class="blue-theme">4</a></li>
+              <li><a href="javascript:void(0)" theme="megna" class="megna-theme">6</a></li>
+              <li><a href="javascript:void(0)" theme="purple" class="purple-theme">5</a></li>
+              <li><a href="javascript:void(0)" theme="green" class="green-theme">2</a></li>
+              
+              
+            </ul>
+
+          <!-- .Notes -->
+          <h3 class="title-heading">Tasks</h3>
+          <div class="notes-widgets">
+             <!-- .Notes header --> 
+             <div class="header-part">
+               <div class="btn-group">
+                  <button aria-expanded="false" data-toggle="dropdown" class="dropdown-toggle daydrop" type="button"> This week <span class="caret"></span></button>
+                  <ul role="menu" class="dropdown-menu">
+                    <li><a href="#">Todays</a></li>
+                    <li><a href="#">Monthly</a></li>
+                    <li><a href="#">Yearly</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <div class="pull-right">
+                    <a href="javascript:void(0)" class="text-inverse m-r-5" data-toggle="tooltip" title="Delete"><i class="ti-trash"></i></a> <a href="javascript:void(0)" data-toggle="tooltip" title="Add New" data-placement="left" class="text-inverse"><i class="ti-plus"></i></a>
+                </div> 
+              </div> 
+              <!-- /.Notes header --> 
+              <!-- .Notes body --> 
+              <ul class="list-task list-group">
+                  <li class="list-group-item">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputSchedule1" name="inputCheckboxesSchedule">
+                      <label for="inputSchedule1"> <span>Schedule meeting</span> </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputCall1" name="inputCheckboxesCall">
+                      <label for="inputCall1"> <span>Give Purchase report</span> </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item" data-role="task">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputBook1" name="inputCheckboxesBook">
+                      <label for="inputBook1"> <span>Book flight for holiday</span> </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item" data-role="task">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputForward1" name="inputCheckboxesForward">
+                      <label for="inputForward1"> <span>Forward all tasks</span> </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item" data-role="task">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputRecieve1" name="inputCheckboxesRecieve">
+                      <label for="inputRecieve1"> <span>Recieve shipment</span> </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item" data-role="task">
+                    <div class="checkbox checkbox-success">
+                      <input type="checkbox" id="inputForward21" name="inputCheckboxesd">
+                      <label for="inputForward21"> <span>Important tasks</span> </label>
+                    </div>
+                  </li>
+              </ul>
+              <!-- /.Notes body -->
+            <a class="text-muted db text-center m-t-10" href="javascript:void(0)">View all notes</a> 
+          </div>
+
+          <!-- .Notification -->
+          <h3 class="title-heading">Notifications <span class="label label-rouded label-danger pull-right">4</span></h3>
+          <div class="message-center p-20"> 
+              <a href="javascript:void(0)">
+              <div class="mail-contnet">
+                <h5>Sonu your title here</h5>
+                <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
+              </a> <a href="javascript:void(0)">
+              <div class="mail-contnet">
+                <h5>Arijit your title here</h5>
+                <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
+              </a> <a href="javascript:void(0)">
+              
+              <div class="mail-contnet">
+                <h5>Your title here Genelia</h5>
+                <span class="mail-desc">I love to do acting and dancing</span> <span class="time">9:08 AM</span> </div>
+              </a> <a href="javascript:void(0)" class="b-none">
+              
+              <div class="mail-contnet">
+                <h5>Pavan kumar</h5>
+                <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
+              </a> </div>            
+          <!-- /.Notification -->
+
+          <!-- .Chat notification -->
+          <h3 class="title-heading">Chat <span class="label label-rouded label-megna pull-right">3</span></h3>
+          <ul class="m-t-20 chatonline">
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg" alt="user-img"  class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/ritesh.jpg" alt="user-img"  class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a></li>
+              <li><a href="javascript:void(0)"><img src="plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a></li>
+            </ul>
+            <!-- /.Chat notification -->
+      </div>
+  </div>
+  <!-- /.right panel -->
+</div>
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  function changeType() {
+    var type = document.getElementById("type_control").value;
+    if (type == 'Manual'){
+      document.getElementById("btn_ph").disabled = false;
+      document.getElementById("btn_nutrition").disabled = false;
+    } else {
+      document.getElementById("btn_ph").disabled = true;
+      document.getElementById("btn_nutrition").disabled = true;
+    }
+  }
+  function nutritionClick() {
+    var btn_nutrition = document.getElementById("btn_nutrition");
+    if (btn_nutrition.classList.contains('btn-danger')){
+      btn_nutrition.classList.remove("btn-danger");
+      btn_nutrition.classList.add("btn-success");
+
+      document.getElementById("status_nutrition").innerHTML = "Status : Open";
+    } else {
+      btn_nutrition.classList.add("btn-danger");
+      btn_nutrition.classList.remove("btn-success");
+    }
+    setTimeout(function() {
+      var btn_nutrition = document.getElementById("btn_nutrition");
+      btn_nutrition.classList.add("btn-danger");
+      btn_nutrition.classList.remove("btn-success");
+
+      document.getElementById("status_nutrition").innerHTML = "Status : Close";
+    }, 2000);
+  }
+  function phClick() {
+    var btn_ph = document.getElementById("btn_ph");
+    if (btn_ph.classList.contains('btn-danger')){
+      btn_ph.classList.remove("btn-danger");
+      btn_ph.classList.add("btn-success");
+
+      document.getElementById("status_ph").innerHTML = "Status : Open";
+    } else {
+      btn_ph.classList.add("btn-danger");
+      btn_ph.classList.remove("btn-success");
+    }
+    setTimeout(function() {
+      var btn_ph = document.getElementById("btn_ph");
+      btn_ph.classList.add("btn-danger");
+      btn_ph.classList.remove("btn-success");
+
+      document.getElementById("status_ph").innerHTML = "Status : Close";
+    }, 2000);
+  }
+</script>
+
+<!--slimscroll JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/custom.min.js"></script>
+<!--Style Switcher -->
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<!-- Sparkline chart JavaScript -->
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
+<script src="plugins/bower_components/switchery/dist/switchery.min.js"></script>
+<script src="plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
+<script src="plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="plugins/bower_components/multiselect/js/jquery.multi-select.js"></script>
+<!-- Flot Charts JavaScript -->
+<script src="plugins/bower_components/flot/excanvas.min.js"></script>
+<script src="plugins/bower_components/flot/jquery.flot.js"></script>
+<script src="plugins/bower_components/flot/jquery.flot.pie.js"></script>
+
+<script src="plugins/bower_components/flot/jquery.flot.time.js"></script>
+<script src="plugins/bower_components/flot/jquery.flot.stack.js"></script>
+<script src="plugins/bower_components/flot/jquery.flot.crosshair.js"></script>
+<script src="plugins/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+<script src="js/flot-data.js"></script>
+<!--Style Switcher -->
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<!--Style Switcher -->
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+</html>
